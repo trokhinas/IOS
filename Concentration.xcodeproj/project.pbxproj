@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AEE8D6FF2183293C006AFC7C /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE8D6FE2183293C006AFC7C /* ThemeProtocol.swift */; };
+		AEE8D707218332DC006AFC7C /* ThemeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE8D706218332DC006AFC7C /* ThemeClass.swift */; };
 		C327E01921427CC10020C767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C327E01821427CC10020C767 /* AppDelegate.swift */; };
 		C327E01B21427CC10020C767 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C327E01A21427CC10020C767 /* ViewController.swift */; };
 		C327E01E21427CC10020C767 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C327E01C21427CC10020C767 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AEE8D6FE2183293C006AFC7C /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		AEE8D706218332DC006AFC7C /* ThemeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeClass.swift; sourceTree = "<group>"; };
 		C327E01521427CC10020C767 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C327E01821427CC10020C767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C327E01A21427CC10020C767 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +62,9 @@
 		C327E01721427CC10020C767 /* Concentration */ = {
 			isa = PBXGroup;
 			children = (
+				AEE8D706218332DC006AFC7C /* ThemeClass.swift */,
 				C327E02A21427FBB0020C767 /* Supporting Files */,
+				AEE8D6FE2183293C006AFC7C /* ThemeProtocol.swift */,
 				C327E01A21427CC10020C767 /* ViewController.swift */,
 				C352EA1F2154F79A005331D2 /* Concentration.swift */,
 				C352EA212154F8BA005331D2 /* Card.swift */,
@@ -149,8 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEE8D707218332DC006AFC7C /* ThemeClass.swift in Sources */,
 				C327E01B21427CC10020C767 /* ViewController.swift in Sources */,
 				C327E01921427CC10020C767 /* AppDelegate.swift in Sources */,
+				AEE8D6FF2183293C006AFC7C /* ThemeProtocol.swift in Sources */,
 				C352EA202154F79A005331D2 /* Concentration.swift in Sources */,
 				C352EA222154F8BA005331D2 /* Card.swift in Sources */,
 			);

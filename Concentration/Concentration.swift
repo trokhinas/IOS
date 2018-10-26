@@ -48,9 +48,21 @@ struct Concentration {
         }
     }
     
-    mutating func shuffle(Array :[Any]) -> Void {
+    init(numberOfPairsOfCards: Int) {
+        assert(numberOfPairsOfCards > 0, "Concentration.init(\(numberOfPairsOfCards)): you must have at least one pair of cards")
+        for _ in 1...numberOfPairsOfCards {
+            let card = Card()
+            cards += [card, card]
+        }
+        cards = shuffle(Array: cards) as! [Card]
+    }
+    
+    
+    
+    
+    func shuffle(Array :[Any]) -> Array<Any> {
         let c = Array.count
-        guard c > 1 else { return }
+        guard c > 1 else { return Array }
         var randomIndexes = [Int]()
         var newArray = [Any]()
         for _ in 1...c {
@@ -61,17 +73,9 @@ struct Concentration {
             randomIndexes.append(index)
             newArray.append(Array[index])
         }
-        let Array = newArray// не происхождит присваивания в войд функции
+        return newArray// не происхождит присваивания в войд функции
         //как перемешать массив передавая его в качестве аргумента?
         
-    }
-    init(numberOfPairsOfCards: Int) {
-        assert(numberOfPairsOfCards > 0, "Concentration.init(\(numberOfPairsOfCards)): you must have at least one pair of cards")
-        for _ in 1...numberOfPairsOfCards {
-            let card = Card()
-            cards += [card, card]
-        }
-        shuffle(Array: cards)
     }
     
     
