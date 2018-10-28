@@ -9,6 +9,8 @@
 import Foundation
 
 struct Concentration {
+
+    // MARK: - Properties
     
     private (set) var cards = [Card]()
     
@@ -32,6 +34,19 @@ struct Concentration {
             }
         }
     }
+
+    // MARK: - Initialization and deinitialization
+
+    init(numberOfPairsOfCards: Int) {
+        assert(numberOfPairsOfCards > 0, "Concentration.init(\(numberOfPairsOfCards)): you must have at least one pair of cards")
+        for _ in 1...numberOfPairsOfCards {
+            let card = Card()
+            cards += [card, card]
+        }
+        shuffle(Array: cards)
+    }
+
+    // MARK: - Public methods
     
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Concentration.choosesCard(at: \(index)): choosen index not in the cards") //если кто-то вызовет индекс, например, с -1, то будет это сообщение
@@ -63,18 +78,6 @@ struct Concentration {
         }
         let Array = newArray// не происхождит присваивания в войд функции
         //как перемешать массив передавая его в качестве аргумента?
-        
     }
-    init(numberOfPairsOfCards: Int) {
-        assert(numberOfPairsOfCards > 0, "Concentration.init(\(numberOfPairsOfCards)): you must have at least one pair of cards")
-        for _ in 1...numberOfPairsOfCards {
-            let card = Card()
-            cards += [card, card]
-        }
-        shuffle(Array: cards)
-    }
-    
-    
-    
     
 }
