@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     // MARK: - IBOutlets
 
+    @IBOutlet weak var ScoreLabel: UILabel!
+    
     @IBOutlet private var cardButtons: [UIButton]!
     @IBOutlet private weak var flipCountLabel: UILabel!{
         didSet {
@@ -31,7 +33,7 @@ class ViewController: UIViewController {
         }
     }
     @IBAction private func newGameButton(_ sender: UIButton) {
-        theme = ThemeGenerator.getNewTheme()
+        theme = ThemeStore.getNewTheme()
         emojiChoices = theme.getEmoji()
         defaultColor = theme.getBackCardColor()
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
@@ -40,18 +42,23 @@ class ViewController: UIViewController {
     }
     
     override func viewDidLoad() {
+        theme = ThemeStore.getNewTheme()
+        
+        emojiChoices = theme.getEmoji()
+        defaultColor = theme.getBackCardColor()
+        updateViewFromModel()
+        
         super.viewDidLoad()
     }
 
     // MARK: - Properties
 
-    private var ThemeGenerator = ThemeStore()
-    lazy private var theme = ThemeGenerator.getNewTheme()
+    private lazy var theme : ThemeContainer = ThemeStore.getNewTheme()
     private lazy var game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
-    lazy private var emojiChoices = theme.getEmoji() // строка с лицевыми символами
+    private var emojiChoices = " "
     private var emoji = [Card: String]()// эмодзи словарь
-    lazy private var defaultColor = theme.getBackCardColor()
-    lazy private var activeColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
+    private var defaultColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
+    private var activeColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
     private var numberOfPairsOfCards: Int {//количество пар основанное на количестве карт
         return (cardButtons.count + 1) / 2
     }

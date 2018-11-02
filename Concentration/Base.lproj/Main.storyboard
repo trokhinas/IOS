@@ -54,7 +54,7 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DLd-kU-cFm">
                                                 <rect key="frame" x="263.33333333333331" y="0.0" width="79.666666666666686" height="72"/>
-                                                <color key="backgroundColor" red="0.011391026571535172" green="0.6113474092745359" blue="0.045558138398695998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.95294117649999999" green="0.70196078429999997" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <state key="normal" title="❔"/>
                                                 <connections>
@@ -163,22 +163,33 @@
                                     <action selector="newGameButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ejK-Yv-lHc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AlY-yg-jLW">
+                                <rect key="frame" x="251.33333333333334" y="44" width="107.66666666666666" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.73333333333333328" green="0.67843137254901964" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="AlY-yg-jLW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="225" id="5Qw-pp-a6P"/>
                             <constraint firstItem="IQP-vH-Z1v" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8gy-9Q-3Vw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IQP-vH-Z1v" secondAttribute="trailing" constant="16" id="CwC-LO-ujU"/>
                             <constraint firstItem="UFB-cy-wCb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="HaT-Ht-e35"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gza-LI-fH5" secondAttribute="bottom" id="Ku4-gh-vme"/>
+                            <constraint firstItem="IQP-vH-Z1v" firstAttribute="top" secondItem="AlY-yg-jLW" secondAttribute="bottom" constant="8" id="f0S-Sz-PW5"/>
                             <constraint firstItem="UFB-cy-wCb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lKZ-Oe-TzG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AlY-yg-jLW" secondAttribute="trailing" constant="16" id="lSf-vi-SRp"/>
                             <constraint firstItem="Gza-LI-fH5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="IQP-vH-Z1v" secondAttribute="bottom" id="mPU-jf-7cQ"/>
                             <constraint firstItem="IQP-vH-Z1v" firstAttribute="top" secondItem="UFB-cy-wCb" secondAttribute="bottom" constant="8" id="mvK-Aa-Mh7"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UFB-cy-wCb" secondAttribute="trailing" constant="20" symbolic="YES" id="uwb-So-q1T"/>
                             <constraint firstItem="Gza-LI-fH5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="xJU-kg-iqY"/>
+                            <constraint firstItem="AlY-yg-jLW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="yOA-Ax-8Ie"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="ScoreLabel" destination="AlY-yg-jLW" id="UAY-1J-JuH"/>
                         <outlet property="flipCountLabel" destination="UFB-cy-wCb" id="jp9-Kw-G2V"/>
                         <outletCollection property="cardButtons" destination="njN-nt-QFV" collectionClass="NSMutableArray" id="eyJ-bs-Hb3"/>
                         <outletCollection property="cardButtons" destination="y2j-7Q-5Jg" collectionClass="NSMutableArray" id="tR4-kt-VAk"/>

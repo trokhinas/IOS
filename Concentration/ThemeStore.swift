@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-class ThemeStore : ThemeGeneratorProtocol {
+struct ThemeStore : ThemeGeneratorProtocol {
     
-    var currentTheme = 2
+    static var currentTheme = 2
     private var natureTheme = "🎄🌳🌵🌴🍃🌾"
     private var facesTheme = "🤔🧐🌝🌚🌞🤫"
     private var gachiTheme = "👬👩‍❤️‍👩👨‍❤️‍👨👨‍👨‍👦‍👦👨‍👨‍👦👩‍👩‍👧‍👦"
@@ -20,7 +20,7 @@ class ThemeStore : ThemeGeneratorProtocol {
     private var trainsTheme = "🚃🚈🚄🚝🚂🚉"
     
     
-    private var allThemes : Array<ThemeContainer> = [
+    static private var allThemes : Array<ThemeContainer> = [
          ThemeContainer(emoji: "🎄🌳🌵🌴🍃🌾", bgColor: #colorLiteral(red: 0.01139102657, green: 0.6113474093, blue: 0.0455581384, alpha: 1), bCardColor: #colorLiteral(red: 0.9529411765, green: 0.9362387564, blue: 0.7109183266, alpha: 1)),
          ThemeContainer(emoji: "🤔🧐🌝🌚🌞🤫", bgColor: #colorLiteral(red: 0.5541146643, green: 0.5711302255, blue: 0.9529411765, alpha: 1), bCardColor: #colorLiteral(red: 0.454408904, green: 0.8181438188, blue: 0.9529411765, alpha: 1)),
          ThemeContainer(emoji: "👬👩‍❤️‍👩👨‍❤️‍👨👨‍👨‍👦‍👦👨‍👨‍👦👩‍👩‍👧‍👦", bgColor: #colorLiteral(red: 0.9529411765, green: 0.4441706373, blue: 0.4621701978, alpha: 1), bCardColor: #colorLiteral(red: 0.9529411765, green: 0.8253936142, blue: 0.945636015, alpha: 1)),
@@ -29,7 +29,7 @@ class ThemeStore : ThemeGeneratorProtocol {
          ThemeContainer(emoji: "🚃🚈🚄🚝🚂🚉", bgColor: #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1), bCardColor: #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)),
     ]
     
-    func getNewTheme() -> ThemeContainer {
+    static func getNewTheme() -> ThemeContainer {
         var newTheme = allThemes.count.acr4random
         while newTheme == currentTheme {
             newTheme = allThemes.count.acr4random

@@ -10,5 +10,5 @@ import Foundation
 
 protocol ThemeGeneratorProtocol {
     
-    func getNewTheme() -> ThemeContainer
+    static func getNewTheme() -> ThemeContainer
 }
