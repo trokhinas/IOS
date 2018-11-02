@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE02A9A9218C4E25007D072B /* MutableCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9A8218C4E25007D072B /* MutableCollection.swift */; };
+		AE02A9AB218C4E4F007D072B /* Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9AA218C4E4F007D072B /* Sequence.swift */; };
+		AE02A9AD218C4EE9007D072B /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9AC218C4EE9007D072B /* Collection.swift */; };
+		AE02A9B0218C525C007D072B /* ThemeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9AF218C525C007D072B /* ThemeProtocol.swift */; };
+		AE02A9B2218C531E007D072B /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9B1218C531E007D072B /* ThemeStore.swift */; };
+		AE02A9B4218C5543007D072B /* ThemeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9B3218C5543007D072B /* ThemeContainer.swift */; };
+		AE02A9B8218C61C6007D072B /* ThemeGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9B7218C61C6007D072B /* ThemeGeneratorProtocol.swift */; };
 		C187FF2C2185C21300A7D76A /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C187FF2B2185C21300A7D76A /* Int.swift */; };
 		C327E01921427CC10020C767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C327E01821427CC10020C767 /* AppDelegate.swift */; };
 		C327E01B21427CC10020C767 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C327E01A21427CC10020C767 /* ViewController.swift */; };
@@ -18,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE02A9A8218C4E25007D072B /* MutableCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MutableCollection.swift; sourceTree = "<group>"; };
+		AE02A9AA218C4E4F007D072B /* Sequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sequence.swift; sourceTree = "<group>"; };
+		AE02A9AC218C4EE9007D072B /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		AE02A9AF218C525C007D072B /* ThemeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeProtocol.swift; sourceTree = "<group>"; };
+		AE02A9B1218C531E007D072B /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
+		AE02A9B3218C5543007D072B /* ThemeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeContainer.swift; sourceTree = "<group>"; };
+		AE02A9B7218C61C6007D072B /* ThemeGeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeGeneratorProtocol.swift; sourceTree = "<group>"; };
 		C187FF2B2185C21300A7D76A /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		C327E01521427CC10020C767 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C327E01821427CC10020C767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,9 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE02A9AE218C523F007D072B /* Protocoles */ = {
+			isa = PBXGroup;
+			children = (
+				AE02A9AF218C525C007D072B /* ThemeProtocol.swift */,
+				AE02A9B7218C61C6007D072B /* ThemeGeneratorProtocol.swift */,
+			);
+			path = Protocoles;
+			sourceTree = "<group>";
+		};
 		C187FF292185C1EA00A7D76A /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				AE02A9AE218C523F007D072B /* Protocoles */,
 				C187FF2A2185C1F200A7D76A /* Extensions */,
 			);
 			path = Library;
@@ -53,6 +77,9 @@
 			isa = PBXGroup;
 			children = (
 				C187FF2B2185C21300A7D76A /* Int.swift */,
+				AE02A9A8218C4E25007D072B /* MutableCollection.swift */,
+				AE02A9AA218C4E4F007D072B /* Sequence.swift */,
+				AE02A9AC218C4EE9007D072B /* Collection.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -81,7 +108,9 @@
 				C327E01A21427CC10020C767 /* ViewController.swift */,
 				C352EA1F2154F79A005331D2 /* Concentration.swift */,
 				C352EA212154F8BA005331D2 /* Card.swift */,
+				AE02A9B1218C531E007D072B /* ThemeStore.swift */,
 				C327E01C21427CC10020C767 /* Main.storyboard */,
+				AE02A9B3218C5543007D072B /* ThemeContainer.swift */,
 			);
 			path = Concentration;
 			sourceTree = "<group>";
@@ -170,9 +199,16 @@
 			files = (
 				C327E01B21427CC10020C767 /* ViewController.swift in Sources */,
 				C327E01921427CC10020C767 /* AppDelegate.swift in Sources */,
+				AE02A9AB218C4E4F007D072B /* Sequence.swift in Sources */,
+				AE02A9A9218C4E25007D072B /* MutableCollection.swift in Sources */,
+				AE02A9B4218C5543007D072B /* ThemeContainer.swift in Sources */,
 				C187FF2C2185C21300A7D76A /* Int.swift in Sources */,
 				C352EA202154F79A005331D2 /* Concentration.swift in Sources */,
+				AE02A9B0218C525C007D072B /* ThemeProtocol.swift in Sources */,
 				C352EA222154F8BA005331D2 /* Card.swift in Sources */,
+				AE02A9B2218C531E007D072B /* ThemeStore.swift in Sources */,
+				AE02A9AD218C4EE9007D072B /* Collection.swift in Sources */,
+				AE02A9B8218C61C6007D072B /* ThemeGeneratorProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
