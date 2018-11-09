@@ -13,12 +13,13 @@ struct Concentration {
     // MARK: - Properties
     
     private (set) var cards = [Card]()
+    private var flipCount = 0
+    private var scoreCount = 0
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get{
-            return cards.indices.filter {
-                cards[$0].isFaceUp
-                }.oneAndOnly
+            return cards.indices.filter
+                { cards[$0].isFaceUp }.oneAndOnly
         }
         set (newValue) {
             for index in cards.indices {
@@ -38,17 +39,36 @@ struct Concentration {
     
     mutating func chooseCard(at index: Int) {
         assert(cards.indices.contains(index), "Concentration.choosesCard(at: \(index)): choosen index not in the cards") //если кто-то вызовет индекс, например, с -1, то будет это сообщение
+        
+        if(!(cards[index].isFaceUp || cards[index].isMatched)){
+            flipCount += 1;
+        }
         if !cards[index].isMatched {      
             if let matchIndex = indexOfOneAndOnlyFaceUpCard, matchIndex != index {
-                if cards[matchIndex] == cards[index] {
+                if cards[matchIndex] == cards[index] {//карты совпали
                     cards[matchIndex].isMatched = true
                     cards[index].isMatched = true
+                    cards[index].isFaceUp = false
+                    cards[matchIndex].isFaceUp = false
+                    
+                    scoreCount += 2
                 }
-                cards[index].isFaceUp = true
-            } else {
+                else {// карты не совпали
+                    cards[index].isFaceUp = true
+                    if (cards[index].wasFliped){
+                        scoreCount -= 1
+                    }
+                }
+
+            } else {// выбрана лишь 1 карта
+                if (cards[index].wasFliped){
+                    scoreCount -= 1
+                }
                 indexOfOneAndOnlyFaceUpCard = index
             }
+
         }
+        cards[index].flip()
     }
     
     mutating func initCards(with numberOfPairsOfCards : Int) {
@@ -58,6 +78,14 @@ struct Concentration {
             cards += [card, card]
         }
         cards.shuffle()
+    
+    
     }
     
+    func getFlipCount() -> Int {
+        return flipCount
+    }
+    func getScoreCount() -> Int {
+        return scoreCount
+    }
 }

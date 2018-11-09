@@ -14,4 +14,5 @@ protocol ThemeProtocol {
     func getEmoji() -> String
     func getBackGroundColor() -> UIColor
     func getBackCardColor() -> UIColor
+    func getActiveColor() -> UIColor
 }

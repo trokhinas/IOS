@@ -14,6 +14,7 @@ struct Card {
     
     var isFaceUp = false
     var isMatched = false
+    var wasFliped = false
     private var identifier: Int
     private static var identifierFactory = 0
     
@@ -28,6 +29,12 @@ struct Card {
     private static func getUniqueIdentifier() -> Int {
         identifierFactory += 1
         return identifierFactory
+    }
+    public mutating func flip() -> Void {
+        if(wasFliped){
+            return
+        }
+        wasFliped = true
     }
 
 }

@@ -10,15 +10,18 @@ import Foundation
 import UIKit
 
 struct ThemeContainer : ThemeProtocol {
-   
+    
+    
     private var emoji : String
     private var backGroundColor : UIColor
     private var backCardColor : UIColor
+    private var activeCardColor : UIColor
     
-    init(emoji: String, bgColor: UIColor, bCardColor: UIColor) {
+    init(emoji: String, bgColor: UIColor, bCardColor: UIColor, aCardColor: UIColor) {
         self.emoji = emoji
         backGroundColor = bgColor
         backCardColor = bCardColor
+        activeCardColor = aCardColor
     }
     
     func getEmoji() -> String {
@@ -29,6 +32,9 @@ struct ThemeContainer : ThemeProtocol {
     }
     func getBackCardColor() -> UIColor {
         return backCardColor
+    }
+    func getActiveColor() -> UIColor {
+        return activeCardColor
     }
     
 }

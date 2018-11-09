@@ -14,6 +14,7 @@
 		AE02A9B2218C531E007D072B /* ThemeStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9B1218C531E007D072B /* ThemeStore.swift */; };
 		AE02A9B4218C5543007D072B /* ThemeContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9B3218C5543007D072B /* ThemeContainer.swift */; };
 		AE02A9B8218C61C6007D072B /* ThemeGeneratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE02A9B7218C61C6007D072B /* ThemeGeneratorProtocol.swift */; };
+		AE754F712195815900B51CD1 /* ProcessClickProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE754F702195815900B51CD1 /* ProcessClickProtocol.swift */; };
 		C187FF2C2185C21300A7D76A /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = C187FF2B2185C21300A7D76A /* Int.swift */; };
 		C327E01921427CC10020C767 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C327E01821427CC10020C767 /* AppDelegate.swift */; };
 		C327E01B21427CC10020C767 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C327E01A21427CC10020C767 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		AE02A9B1218C531E007D072B /* ThemeStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeStore.swift; sourceTree = "<group>"; };
 		AE02A9B3218C5543007D072B /* ThemeContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeContainer.swift; sourceTree = "<group>"; };
 		AE02A9B7218C61C6007D072B /* ThemeGeneratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeGeneratorProtocol.swift; sourceTree = "<group>"; };
+		AE754F702195815900B51CD1 /* ProcessClickProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessClickProtocol.swift; sourceTree = "<group>"; };
 		C187FF2B2185C21300A7D76A /* Int.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		C327E01521427CC10020C767 /* Concentration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Concentration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C327E01821427CC10020C767 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			children = (
 				AE02A9AF218C525C007D072B /* ThemeProtocol.swift */,
 				AE02A9B7218C61C6007D072B /* ThemeGeneratorProtocol.swift */,
+				AE754F702195815900B51CD1 /* ProcessClickProtocol.swift */,
 			);
 			path = Protocoles;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C327E01B21427CC10020C767 /* ViewController.swift in Sources */,
+				AE754F712195815900B51CD1 /* ProcessClickProtocol.swift in Sources */,
 				C327E01921427CC10020C767 /* AppDelegate.swift in Sources */,
 				AE02A9AB218C4E4F007D072B /* Sequence.swift in Sources */,
 				AE02A9A9218C4E25007D072B /* MutableCollection.swift in Sources */,

@@ -24,7 +24,6 @@ class ViewController: UIViewController {
     // MARK: - IBActions
 
     @IBAction private func touchCard(_ sender: UIButton) {
-        flipCount += 1
         if let cardNumber = cardButtons.index(of: sender) {
             game.chooseCard(at: cardNumber)
             updateViewFromModel()
@@ -34,11 +33,15 @@ class ViewController: UIViewController {
     }
     @IBAction private func newGameButton(_ sender: UIButton) {
         theme = ThemeStore.getNewTheme()
+        
         emojiChoices = theme.getEmoji()
         defaultColor = theme.getBackCardColor()
+        activeColor = theme.getActiveColor()
+        view.backgroundColor = theme.getBackGroundColor()
+        
         game = Concentration(numberOfPairsOfCards: numberOfPairsOfCards)
+        
         updateViewFromModel()
-        flipCount = 0
     }
     
     override func viewDidLoad() {
@@ -46,6 +49,8 @@ class ViewController: UIViewController {
         
         emojiChoices = theme.getEmoji()
         defaultColor = theme.getBackCardColor()
+        activeColor = theme.getActiveColor()
+        view.backgroundColor = theme.getBackGroundColor()
         updateViewFromModel()
         
         super.viewDidLoad()
@@ -58,14 +63,9 @@ class ViewController: UIViewController {
     private var emojiChoices = " "
     private var emoji = [Card: String]()// эмодзи словарь
     private var defaultColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
-    private var activeColor = #colorLiteral(red: 0, green: 0.5690457821, blue: 0.5746168494, alpha: 1)
+    private var activeColor = #colorLiteral(red: 0.6815776418, green: 0.5159688709, blue: 0, alpha: 0.3972392638)
     private var numberOfPairsOfCards: Int {//количество пар основанное на количестве карт
         return (cardButtons.count + 1) / 2
-    }
-    private (set) var flipCount = 0 {
-        didSet {
-            updateFlipCountLabel()
-        }
     }
     
     
@@ -80,20 +80,26 @@ class ViewController: UIViewController {
                 button.backgroundColor = activeColor
             } else {
                 button.setTitle(
-                    !card.isMatched ? "❔" : " ", for: UIControlState.normal)
+                    card.isMatched ? " " : "❔", for: UIControlState.normal)
                 button.backgroundColor =
                     card.isMatched ? UIColor.clear : defaultColor
             }
         }
+        updateFlipCountLabel()
+        updateScoreLabel()
     }
     
     func updateFlipCountLabel() {
-        let attribbutes : [NSAttributedStringKey: Any] = [
+        /*let attribbutes : [NSAttributedStringKey: Any] = [
             .strokeWidth: 5.0,
             .strokeColor: UIColor.red
         ]
         let attributedString = NSAttributedString(string: "Flips: \(flipCount)", attributes: attribbutes)
-        flipCountLabel.attributedText = attributedString
+        flipCountLabel.attributedText = attributedString*/
+        flipCountLabel.text = "Flips: \(game.getFlipCount())"
+    }
+    func updateScoreLabel() {
+        ScoreLabel.text = "Score: \(game.getScoreCount())"
     }
 
     // MARK: - Private methods
